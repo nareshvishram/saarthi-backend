@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Searches</title>
+    <link rel="icon"  href="https://www.flaticon.com/premium-icon/icons/svg/2643/2643045.svg"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        #text_area{
+        padding-left:20px;
+        padding-top:20px;
+
+        }
+    </style>
+</head>
+<body>
+ <div class="container">
+
+     {% if data %}
+      <h1><a href="{% url 'show_web' data.id %}">Show Web View</a></h1>
+     <textarea cols="100" rows="50" id="text_area">  {{data.content}}</textarea>
+
+     {% endif %}
+
+
+
+ </div>
+</body>
+</html>

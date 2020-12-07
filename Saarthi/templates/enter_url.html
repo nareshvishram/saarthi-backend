@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+	<link rel="icon"  href="https://www.flaticon.com/premium-icon/icons/svg/2643/2643045.svg"/>
+     <link rel="stylesheet" href="{% static 'enter_url/css/enter_url.css' %}">
+</head>
+<body>
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Enter URL</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab" hidden></label>
+		<div class="login-form">
+            <form action="{% url 'enter_url' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+			<div class="sign-in-htm">
+				<div class="group" style="margin-top:40px;">
+					<label for="user" class="label">Enter URL To Search</label>
+					<input id="user" type="url" class="input" name="url" required>
+				</div>
+				<div class="group" style="margin-top:40px;">
+					<input type="submit" class="button" value="Search">
+				</div>
+				<div class="hr"></div>
+
+			</div>
+            </form>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>
